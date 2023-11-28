@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class GradeCalculator {
+
+    // Constants for weightage of each component
+    private static final double ASSIGNMENT_WEIGHT = 0.3;
+    private static final double QUIZ_WEIGHT = 0.2;
+    private static final double EXAM_WEIGHT = 0.5;
+
+    public static void main(String[] args) {
+        // Scanner for user input
+        Scanner scanner = new Scanner(System.in);
+
+        // Get user input for scores
+        System.out.print("Enter your assignment score (out of 100): ");
+        double assignmentScore = scanner.nextDouble();
+
+        System.out.print("Enter your quiz score (out of 100): ");
+        double quizScore = scanner.nextDouble();
+
+        System.out.print("Enter your exam score (out of 100): ");
+        double examScore = scanner.nextDouble();
+
+        // Calculate overall grade
+        double overallGrade = (assignmentScore * ASSIGNMENT_WEIGHT) +
+                              (quizScore * QUIZ_WEIGHT) +
+                              (examScore * EXAM_WEIGHT);
+
+        // Display the overall grade
+        System.out.println("\nYour overall grade is: " + overallGrade);
+
+        // Close the scanner
+        scanner.close();
+    }
+}
